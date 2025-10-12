@@ -14,6 +14,14 @@ class ProductController extends Controller
         return view('products', compact('products'));
     }
 
+    public function search(Request $request)
+    {
+
+        $products = Product::KeywordSearch($request->keyword)->get();
+
+        return view('product', compact('products'));
+    }
+
     public function register()
     {
         $seasons = Season::all();

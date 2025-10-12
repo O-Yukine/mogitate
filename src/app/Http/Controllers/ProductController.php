@@ -19,7 +19,7 @@ class ProductController extends Controller
 
         $products = Product::KeywordSearch($request->keyword)->get();
 
-        return view('product', compact('products'));
+        return view('products', compact('products'));
     }
 
     public function register()

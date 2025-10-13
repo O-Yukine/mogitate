@@ -14,19 +14,19 @@
             <div class="product-contents__search">
                 <form class="form" action="/products/search" method="get">
                     <div class="product-contents__search--list">
-                        <ul>
-                            <li><input class="product-contents__search--keyword" type="text" placeholder="商品名で検索"
-                                    name="keyword"></li>
-                            <li><button class="product-contents__search--submit" type="submit">検索</button></li>
-                            <li>価格順で表示</li>
-                            <li><select class="product-contents__sort" name="" id="">
-                                    <option value="">価格で並べ替え</option>
-                                    <option value="price_asc" {{ request('sort') == 'price_asc' ? 'selected' : '' }}>価格が安い順
-                                    </option>
-                                    <option value="price_desc" {{ request('sort') == 'price_desc' ? 'selected' : '' }}>
-                                        価格が高い順</option>
-                                </select></li>
-                        </ul>
+                        <input class="product-contents__search--keyword" type="text" placeholder="商品名で検索" name="keyword">
+                        <button class="product-contents__search--submit" type="submit">検索</button>
+                        <p>価格順で表示</p>
+                        <select class="product-contents__sort" name="sort" onchange="this.form.submit()">
+                            <option value="">価格で並べ替え</option>
+                            <option value="lower_price">価格が安い順 </option>
+                            <option value="higher_price"> 価格が高い順</option>
+                        </select>
+                        @if (request('sort') == 'lower_price')
+                            <p>価格が安い順</p>
+                        @elseif(request('sort') == 'higher_price')
+                            <p>価格が高い順</p>
+                        @endif
                     </div>
                 </form>
             </div>

@@ -24,4 +24,10 @@ class Product extends Model
             $query->where('name', 'like', '%' . $keyword . '%');
         }
     }
+
+    public function sortAsc()
+    {
+        $product = Product::all();
+        $product->orderBy('price', 'asc');
+    }
 }

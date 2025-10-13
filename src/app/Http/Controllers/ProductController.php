@@ -10,7 +10,7 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::all();
+        $products = Product::paginate(6);
         return view('products', compact('products'));
     }
 
@@ -30,7 +30,7 @@ class ProductController extends Controller
                 $query->orderBy('price', 'desc');
             }
         }
-        $products = $query->get();
+        $products = $query->paginate(6);
 
         return view('products', compact('products'));
     }

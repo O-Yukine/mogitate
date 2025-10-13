@@ -50,4 +50,5 @@
             </div>
         </div>
     </div>
+    {{ $products->appends(request()->except('page'))->links() }}
 @endsection

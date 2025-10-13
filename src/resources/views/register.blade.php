@@ -44,7 +44,8 @@
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
-                        <input type="file" name="image">
+                        <img src="" alt="画像" id="preview">
+                        <input type="file" name="image" id="imageInput">
                     </div>
                     <div class="form__erro"><!--バリデーション機能を実装したら記述します。-->
                     </div>
@@ -85,4 +86,26 @@
             </div>
         </form>
     </div>
+
+
+    <script>
+        document.getElementById('imageInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            const preview = document.getElementById('preview');
+
+            if (file && file.type.startsWith('image/')) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block'; // 表示する
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                preview.src = '';
+                preview.style.display = 'none'; // 非表示にする
+            }
+        });
+    </script>
 @endsection

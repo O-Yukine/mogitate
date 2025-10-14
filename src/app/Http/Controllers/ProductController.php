@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Season;
 use App\Models\Product;
+use App\Http\Requests\RegisterRequest;
 
 class ProductController extends Controller
 {
@@ -42,7 +43,7 @@ class ProductController extends Controller
         return view('register', ['seasons' => $seasons]);
     }
 
-    public function store(Request $request)
+    public function store(RegisterRequest $request)
     {
 
         //写真をそのままの名前で保存

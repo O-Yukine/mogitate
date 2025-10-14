@@ -5,10 +5,11 @@
 @endsection
 
 @section('content')
-    <div class="register-contents">
+    <div class="detail-contents">
         <form class="form" action="/products/{{ $product->id }}/update" enctype="multipart/form-data" method="post">
             @method('Patch')
             @csrf
+            <p class="detail__breadcrumb"><a href="/products">商品一覧&nbsp;>&nbsp;</a><span>{{ $product->name }}</span></p>
             <div class="form__group_float">
                 <div class="form__group-title">
                     <img src="{{ asset('storage/images/' . $product->image) }}" alt="画像" />

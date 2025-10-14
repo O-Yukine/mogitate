@@ -1,11 +1,19 @@
-.register-contents {
+.detail-contents {
     margin: 0 auto;
-    padding: 0px 15px;
+    padding: 30px 15px;
     max-width: 1512px;
     background: #f8f8f8;
     height: 1000px;
     text-align: center;
     position: relative;
+}
+.detail__breadcrumb {
+    text-align: left;
+}
+
+.detail__breadcrumb a {
+    text-decoration: none;
+    color: lightblue;
 }
 .form {
     max-width: 760px;

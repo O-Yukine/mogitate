@@ -8,7 +8,7 @@
     <div class="product-contents">
         <div class="product-contents__title">
             <h2>商品一覧</h2>
-            <a class="product-contents__register" href="{{ asset('/products/register') }}">+商品を追加</a>
+            <a class="product-contents__register" href="{{ asset('/products/register') }}">+&nbsp;商品を追加</a>
         </div>
         <div class="product-contents__inner">
             <div class="product-contents__search">
@@ -23,9 +23,14 @@
                             <option value="higher_price"> 価格が高い順</option>
                         </select>
                         @if (request('sort') == 'lower_price')
-                            <p>価格が安い順</p>
+                            <div class="sort_result">
+                                <p>価格が安い順&nbsp;&nbsp;&nbsp;<a href="/products">x</a></p>
+                            </div>
                         @elseif(request('sort') == 'higher_price')
-                            <p>価格が高い順</p>
+                            <div class="sort_result">
+                                <p>価格が高い順&nbsp;&nbsp;&nbsp;<a href="/products">x</a></p>
+
+                            </div>
                         @endif
                     </div>
                 </form>

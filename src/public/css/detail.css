@@ -46,6 +46,18 @@
 .form__input--textarea textarea {
     height: 180px;
 }
+.form__error {
+    margin: 10px auto;
+    height: 20px;
+    color: #ff0000;
+    text-align: left;
+}
+.form__error-season {
+    margin: 10px auto;
+    height: 20px;
+    color: #ff0000;
+    text-align: right;
+}
 .form__button {
     margin-top: 30px;
 }

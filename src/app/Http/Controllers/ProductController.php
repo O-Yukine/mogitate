@@ -71,7 +71,7 @@ class ProductController extends Controller
         return view('detail', ['product' => $productId, 'seasons' => $seasons]);
     }
 
-    public function update(Request $request, Product $productId)
+    public function update(RegisterRequest $request, Product $productId)
     {
         // dd($request->all());
         $product = $request->only(['name', 'price', 'description']);

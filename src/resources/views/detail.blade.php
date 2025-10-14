@@ -17,7 +17,10 @@
                     <div class="form__input--text">
                         <input type="file" name="image" value="{{ $product->image }}">
                     </div>
-                    <div class="form__erro"><!--バリデーション機能を実装したら記述します。-->
+                    <div class="form__error">
+                        @error('image')
+                            {{ $message }}
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -29,7 +32,10 @@
                     <div class="form__input--text">
                         <input type="text" name="name" value="{{ $product->name }}">
                     </div>
-                    <div class="form__erro"><!--バリデーション機能を実装したら記述します。-->
+                    <div class="form__error">
+                        @error('name')
+                            {{ $message }}
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -41,7 +47,10 @@
                     <div class="form__input--text">
                         <input type="text" name="price" value="{{ $product->price }}">
                     </div>
-                    <div class="form__erro"><!--バリデーション機能を実装したら記述します。-->
+                    <div class="form__error">
+                        @error('price')
+                            {{ $message }}
+                        @enderror
                     </div>
                 </div>
             </div>
@@ -57,26 +66,31 @@
                             <label for="season{{ $season->id }}">{{ $season->name }}</label>
                         @endforeach
                     </div>
-                    <div class="form__erro"><!--バリデーション機能を実装したら記述します。-->
+                    <div class="form__error-season">
+                        @error('season')
+                            {{ $message }}
+                        @enderror
                     </div>
                 </div>
-            </div>
-            <div class="form__group">
-                <div class="form__group-title">
-                    <span class="form__label--item">商品説明</span>
-                </div>
-                <div class="form__group-content">
-                    <div class="form__input--textarea">
-                        <textarea name="description">{{ $product->description }}</textarea>
+                <div class="form__group">
+                    <div class="form__group-title">
+                        <span class="form__label--item">商品説明</span>
                     </div>
-                    <div class="form__erro"><!--バリデーション機能を実装したら記述します。-->
+                    <div class="form__group-content">
+                        <div class="form__input--textarea">
+                            <textarea name="description">{{ $product->description }}</textarea>
+                        </div>
+                        <div class="form__error">
+                            @error('description')
+                                {{ $message }}
+                            @enderror
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="form__button">
-                <a class="form__button-back "href="/products">戻る</a>
-                <button class="form__button-submit" type="submit">変更を保存</button>
-            </div>
+                <div class="form__button">
+                    <a class="form__button-back "href="/products">戻る</a>
+                    <button class="form__button-submit" type="submit">変更を保存</button>
+                </div>
         </form>
         <form class="form" action="/products/{{ $product->id }}/delete" method="post">
             @method('delete')

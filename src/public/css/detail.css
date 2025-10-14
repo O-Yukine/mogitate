@@ -1,0 +1,84 @@
+.register-contents {
+    margin: 0 auto;
+    padding: 0px 15px;
+    max-width: 1512px;
+    background: #f8f8f8;
+    height: 1000px;
+    text-align: center;
+    position: relative;
+}
+.form {
+    max-width: 760px;
+    width: 100%;
+    margin: 60px auto;
+}
+.form__group_float {
+    width: 400px;
+    float: left;
+}
+.form__group-title img {
+    width: 100%;
+}
+
+.form__group-title {
+    text-align: left;
+    padding: 20px;
+}
+
+.form__input--text input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    appearance: none;
+}
+.form__input--textarea textarea {
+    padding: 10px;
+    width: 600px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    appearance: none;
+}
+.form__input--text input {
+    height: 40px;
+}
+
+.form__input--textarea textarea {
+    height: 180px;
+}
+.form__button {
+    margin-top: 30px;
+}
+
+.form__button-submit {
+    padding: 10px;
+    width: 130px;
+    height: 48px;
+    border: none;
+    border-radius: 3px;
+    background: orange;
+    color: #000;
+    cursor: pointer;
+    margin-left: 50px;
+}
+.form__button-back {
+    padding: 17px 55px;
+    background-color: rgb(241, 235, 235); /* ボタンの色 */
+    color: #000; /* 文字色 */
+    text-decoration: none; /* 下線を消す */
+    border-radius: 3px; /* 角丸 */
+    font-size: 14px;
+}
+.form__button-delete {
+    padding: 10px;
+    width: 70px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    background: orange;
+    color: #000;
+    cursor: pointer;
+    position: absolute;
+    bottom: 290px;
+    right: 430px;
+}

@@ -1,18 +1,26 @@
 .register-contents {
     margin: 0 auto;
-    padding: 30px 15px;
-    max-width: 1230px;
-    text-align: left;
+    padding: 15px;
+    max-width: 1512px;
+    background: #f8f8f8;
+    height: 1000px;
 }
 .register-contents__titel {
     margin-bottom: 40px;
+    padding-left: 200px;
+}
+.form-inner {
+    margin: 0 auto;
+    width: 70%;
 }
 .form {
-    margin: 0 auto;
     width: 70%;
 }
 .form__group {
     margin-bottom: 15px;
+}
+.form__group-title {
+    margin-bottom: 10px;
 }
 
 .form__label--required {
@@ -47,11 +55,20 @@
 
 .form__button-submit {
     padding: 10px;
-    width: 30%;
+    width: 130px;
     height: 50px;
     border: none;
     border-radius: 3px;
-    background: #000;
-    color: #fff;
+    background: orange;
+    color: #000;
     cursor: pointer;
+    margin-left: 50px;
+}
+.form__button-back {
+    padding: 17px 50px;
+    background-color: orange; /* ボタンの色 */
+    color: #000; /* 文字色 */
+    text-decoration: none; /* 下線を消す */
+    border-radius: 3px; /* 角丸 */
+    font-size: 14px;
 }

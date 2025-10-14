@@ -6,12 +6,12 @@
 
 @section('content')
     <div class="register-contents">
-        <form action="/products/{{ $product->id }}/update" enctype="multipart/form-data" method="post">
+        <form class="form" action="/products/{{ $product->id }}/update" enctype="multipart/form-data" method="post">
             @method('Patch')
             @csrf
-            <div class="form__group">
+            <div class="form__group_float">
                 <div class="form__group-title">
-                    {{-- <img src="{{ asset('storage/images/' . $product->image) }}" alt="画像" /> --}}
+                    <img src="{{ asset('storage/images/' . $product->image) }}" alt="画像" />
                 </div>
                 <div class="form__group-content">
                     <div class="form__input--text">
@@ -74,14 +74,14 @@
                 </div>
             </div>
             <div class="form__button">
-                <a href="/products">戻る</a>
+                <a class="form__button-back "href="/products">戻る</a>
                 <button class="form__button-submit" type="submit">変更を保存</button>
             </div>
         </form>
         <form class="form" action="/products/{{ $product->id }}/delete" method="post">
             @method('delete')
             @csrf
-            <button class="form__button-submit" type="submit">削除</button>
+            <button class="form__button-delete" type="submit">削除</button>
         </form>
     </div>
 @endsection

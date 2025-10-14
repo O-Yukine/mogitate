@@ -49,6 +49,6 @@
                 @endforeach
             </div>
         </div>
+        {{ $products->appends(request()->except('page'))->links() }}
     </div>
-    {{ $products->appends(request()->except('page'))->links() }}
 @endsection

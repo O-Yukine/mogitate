@@ -37,22 +37,7 @@
             </div>
             <div class="product-contents__products">
                 @foreach ($products as $product)
-                    <a href="{{ url('/products/' . $product->id) }}">
-                        <div class="card">
-
-                            <div class="card__img">
-                                <img src="{{ asset('storage/images/' . $product->image) }}" alt="画像" />
-                            </div>
-                            <div class="card__content">
-                                <div class="card__content-tag">
-                                    <p class="card__content-tag-item"> {{ $product->name }} </p>
-                                    <p class="card__content-tag-item card__content-tag-item--last">
-                                        {{ '¥' . $product->price }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </a>
+                    <x-product-card :product="$product" />
                 @endforeach
             </div>
         </div>

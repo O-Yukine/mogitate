@@ -18,20 +18,28 @@ class ProductController extends Controller
     public function search(Request $request)
     {
 
-        $query = Product::KeywordSearch($request->keyword);
+        // $query = Product::KeywordSearch($request->keyword);
 
+        //modelに移動
 
-        if ($request->filled('sort')) {
-            if (
-                $request->input('sort')
-                == 'lower_price'
-            ) {
-                $query->orderBy('price', 'asc');
-            } elseif ($request->input('sort') == 'higher_price'); {
-                $query->orderBy('price', 'desc');
-            }
-        }
-        $products = $query->paginate(6);
+        // if ($request->filled('sort')) {
+        //     if (
+        //         $request->input('sort')
+        //         == 'lower_price'
+        //     ) {
+        //         $query->orderBy('price', 'asc');
+        //     } elseif ($request->input('sort') == 'higher_price'); {
+        //         $query->orderBy('price', 'desc');
+        //     }
+        // }
+
+        // $products = $query->paginate(6);
+
+        $products = Product::query()
+            ->keywordSearch($request->keyword)
+            ->priceSort($request->sort)
+            ->paginate(6);
+
 
         return view('products', compact('products'));
     }

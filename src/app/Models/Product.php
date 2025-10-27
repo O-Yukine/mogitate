@@ -25,9 +25,13 @@ class Product extends Model
         }
     }
 
-    public function sortAsc()
+    public function scopePriceSort($query, $sort)
     {
-        $product = Product::all();
-        $product->orderBy('price', 'asc');
+        if (!$sort) return $query;
+
+        if ($sort === 'lower_price') return $query->orderBy('price', 'asc');
+        if ($sort === 'higher_price') return $query->orderBy('price', 'desc');
+
+        return $query;
     }
 }
